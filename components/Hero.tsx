@@ -12,12 +12,6 @@ const fadeUp = {
   }),
 };
 
-const stats = [
-  { value: "5", label: "Unidades de negocio" },
-  { value: "Llave en mano", label: "Proyectos integrales" },
-  { value: "7×24", label: "Monitoreo y soporte" },
-  { value: "NOC + SOC", label: "Operación continua" },
-];
 
 export default function Hero() {
   const handleScroll = (href: string) => {
@@ -117,23 +111,6 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Stats */}
-        <motion.div
-          custom={4}
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          className="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 border-t border-white/10 pt-10"
-        >
-          {stats.map((stat, i) => (
-            <div key={i} className="text-center lg:text-left">
-              <div className="text-2xl lg:text-3xl font-bold text-white mb-1">
-                {stat.value}
-              </div>
-              <div className="text-sm text-white/50">{stat.label}</div>
-            </div>
-          ))}
-        </motion.div>
       </div>
 
       {/* Scroll indicator */}
