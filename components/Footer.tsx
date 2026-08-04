@@ -44,9 +44,8 @@ export default function Footer() {
               <span className="font-bold text-xl tracking-wide">FORTEVA</span>
             </div>
             <p className="text-white/50 text-sm leading-relaxed mb-6">
-              Integrador de infraestructura, tecnología y servicios administrados.
-              Diseñamos, construimos, operamos y protegemos la infraestructura crítica
-              de organizaciones públicas y privadas.
+              Diseñamos, construimos, operamos y protegemos infraestructura crítica
+              para organizaciones públicas y privadas.
             </p>
             <div className="flex items-center gap-3">
               <motion.a

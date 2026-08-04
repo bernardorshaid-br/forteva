@@ -1,15 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { UserCheck, Layers, TrendingUp, CheckCircle2 } from "lucide-react";
+import { Layers, Target, TrendingUp, CheckCircle2 } from "lucide-react";
 
 const pillars = [
   {
     icon: Layers,
-    title: "Integración única",
+    title: "Integración completa",
     subtitle: "Un socio, todo el proyecto",
     description:
-      "Combinamos infraestructura física, tecnología e IT y servicios administrados en una única empresa. Integramos disciplinas que normalmente se contratan por separado, eliminando la fragmentación y los problemas de coordinación.",
+      "Combinamos infraestructura física, tecnología e IT y servicios administrados en una única empresa. Integramos disciplinas que normalmente se contratan por separado, eliminando fragmentación y problemas de coordinación entre proveedores.",
     features: [
       "Desde la obra civil hasta la puesta en marcha",
       "Un único responsable del proyecto",
@@ -17,23 +17,23 @@ const pillars = [
     ],
   },
   {
-    icon: UserCheck,
-    title: "Excelencia técnica",
-    subtitle: "Equipos interdisciplinarios",
+    icon: Target,
+    title: "Metodología sólida",
+    subtitle: "Proceso estandarizado",
     description:
-      "Nuestros equipos combinan ingeniería de redes, construcción, ciberseguridad y operaciones. Trabajamos bajo procesos estandarizados con relevamiento, ingeniería, diseño, implementación, documentación y mejora continua.",
+      "Cada proyecto sigue un proceso claro: relevamiento, diagnóstico, ingeniería, diseño, planificación, implementación, documentación, puesta en marcha y soporte. Esto garantiza previsibilidad, calidad y trazabilidad en todas las etapas.",
     features: [
-      "Ingenieros certificados en Cisco, Meraki, Fortinet",
-      "Procesos con trazabilidad en todas las etapas",
-      "Documentación técnica completa en cada proyecto",
+      "Documentación técnica completa",
+      "Trazabilidad en cada etapa",
+      "Mejora continua incorporada al proceso",
     ],
   },
   {
     icon: TrendingUp,
-    title: "Relaciones de largo plazo",
-    subtitle: "Socio estratégico",
+    title: "Visión de largo plazo",
+    subtitle: "Socios estratégicos",
     description:
-      "Nuestro objetivo es acompañar a cada cliente desde el diseño inicial hasta la evolución permanente de su infraestructura. Construimos vínculos de confianza mediante contratos de mantenimiento, operación y soporte continuos.",
+      "Nuestro objetivo es construir relaciones duraderas. No buscamos proyectos puntuales — buscamos acompañar a cada cliente desde el diseño inicial hasta la evolución permanente de su infraestructura mediante contratos de operación y soporte.",
     features: [
       "Mayor velocidad de implementación",
       "Menores costos de coordinación",
@@ -82,7 +82,7 @@ export default function About() {
           </h2>
           <p className="text-gray-500 max-w-2xl mx-auto text-lg">
             Diseñamos soluciones integrales que van desde la obra civil
-            hasta la operación continua de la infraestructura, con un único responsable
+            hasta la operación continua de la infraestructura — con un único responsable
             y foco total en disponibilidad, eficiencia y escalabilidad.
           </p>
         </motion.div>
@@ -99,11 +99,9 @@ export default function About() {
             <motion.div key={index} variants={itemVariants} className="relative group">
               <div className="h-full bg-white border border-gray-100 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:border-brand-100 transition-all duration-300">
                 <div className="absolute top-0 left-8 right-8 h-0.5 bg-gradient-to-r from-transparent via-brand-600 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
-
                 <div className="w-12 h-12 rounded-xl bg-navy-800 flex items-center justify-center mb-6 group-hover:bg-brand-600 transition-colors duration-300">
                   <pillar.icon size={22} className="text-white" />
                 </div>
-
                 <div className="text-xs font-semibold text-brand-600 uppercase tracking-widest mb-1">
                   {pillar.subtitle}
                 </div>
@@ -111,7 +109,6 @@ export default function About() {
                 <p className="text-gray-500 text-sm leading-relaxed mb-6">
                   {pillar.description}
                 </p>
-
                 <ul className="space-y-2">
                   {pillar.features.map((feature, fi) => (
                     <li key={fi} className="flex items-start gap-2 text-sm text-gray-600">
@@ -148,7 +145,7 @@ export default function About() {
           </div>
         </motion.div>
 
-        {/* Partners */}
+        {/* Technologies */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -157,7 +154,7 @@ export default function About() {
           className="mt-6 py-8 px-8 bg-gray-50 rounded-2xl border border-gray-100"
         >
           <p className="text-center text-xs font-semibold text-gray-400 uppercase tracking-widest mb-6">
-            Tecnologías y fabricantes con los que trabajamos
+            Tecnologías con las que trabajamos
           </p>
           <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-14">
             {["Cisco", "Cisco Meraki", "Aruba", "Fortinet", "HPE", "Dell", "Lenovo", "Ubiquiti", "VMware", "Mikrotik"].map((brand) => (

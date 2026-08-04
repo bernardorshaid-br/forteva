@@ -51,7 +51,7 @@ export default function Hero() {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-600/10 border border-brand-600/20 text-brand-400 text-sm font-medium mb-8"
           >
             <span className="w-2 h-2 rounded-full bg-brand-400 animate-pulse" />
-            Integrador de Infraestructura, Tecnología y Servicios
+            Infraestructura · Tecnología · Servicios
           </motion.div>
 
           {/* Headline */}
