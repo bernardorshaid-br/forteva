@@ -42,23 +42,21 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
 
-          {/* Logo */}
+          {/* Logo — transparent PNG, floats clean on dark bg */}
           <motion.a
             href="#"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             whileHover={{ scale: 1.02 }}
             className="flex-shrink-0"
           >
-            <div className="bg-white rounded-xl px-3 py-1.5 shadow-sm">
-              <Image
-                src="/logo-forteva.png"
-                alt="FORTEVA"
-                width={150}
-                height={40}
-                priority
-                className="object-contain h-9 w-auto"
-              />
-            </div>
+            <Image
+              src="/logo-forteva.png"
+              alt="FORTEVA"
+              width={180}
+              height={50}
+              priority
+              className="object-contain h-10 w-auto"
+            />
           </motion.a>
 
           {/* Desktop Nav */}
@@ -75,7 +73,7 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* CTA Button */}
+          {/* CTA */}
           <div className="hidden lg:flex items-center gap-4">
             <motion.button
               onClick={() => handleNavClick("#contacto")}
@@ -87,7 +85,7 @@ export default function Navbar() {
             </motion.button>
           </div>
 
-          {/* Mobile Menu Toggle */}
+          {/* Mobile Toggle */}
           <button
             className="lg:hidden text-white/80 hover:text-white p-2"
             onClick={() => setMobileOpen(!mobileOpen)}
