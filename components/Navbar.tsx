@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { LogoIcon } from "./Logo";
+import Image from "next/image";
 
 const navItems = [
   { label: "Servicios", href: "#servicios" },
@@ -45,13 +45,17 @@ export default function Navbar() {
           <motion.a
             href="#"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="flex items-center gap-2 group"
+            className="flex items-center group"
             whileHover={{ scale: 1.02 }}
           >
-            <LogoIcon size={32} />
-            <span className="text-white font-bold text-xl tracking-wide">
-              FORTEVA
-            </span>
+            <Image
+              src="/logo-forteva.png"
+              alt="FORTEVA"
+              width={220}
+              height={60}
+              priority
+              className="object-contain"
+            />
           </motion.a>
 
           {/* Desktop Nav */}
