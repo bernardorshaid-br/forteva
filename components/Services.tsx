@@ -85,12 +85,12 @@ export default function Services() {
             <span className="w-8 h-0.5 bg-brand-600" />
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold text-navy-800 leading-tight mb-4">
-            Infraestructura tecnológica como especialidad.
+            Especialistas en infraestructura tecnológica.
             <br className="hidden sm:block" />
-            <span className="text-brand-600"> Todo lo demás, para ejecutar proyectos integrales.</span>
+            <span className="text-brand-600"> Con capacidad de ejecución integral.</span>
           </h2>
           <p className="text-gray-500 max-w-2xl mx-auto text-lg">
-            La obra civil, la seguridad y los servicios administrados no son negocios separados — son capacidades complementarias que nos permiten entregar proyectos completos sin depender de terceros.
+            Integramos obra civil, seguridad y operación como capacidades propias — para ejecutar proyectos completos sin fragmentar responsabilidades entre proveedores.
           </p>
         </motion.div>
 

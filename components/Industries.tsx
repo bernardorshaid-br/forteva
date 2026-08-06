@@ -87,9 +87,9 @@ export default function Industries() {
             <span className="w-8 h-0.5 bg-brand-600" />
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold text-navy-800 leading-tight mb-4">
-            Trabajamos con organizaciones
+            Ejecutamos proyectos de infraestructura
             <br className="hidden sm:block" />
-            <span className="text-brand-600"> que mueven el país</span>
+            <span className="text-brand-600"> en los sectores que más lo necesitan.</span>
           </h2>
           <p className="text-gray-500 max-w-xl mx-auto text-lg">
             Entendemos los desafíos de cada sector y ofrecemos soluciones
