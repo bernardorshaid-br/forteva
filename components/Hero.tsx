@@ -12,7 +12,6 @@ const fadeUp = {
   }),
 };
 
-
 export default function Hero() {
   const handleScroll = (href: string) => {
     const el = document.querySelector(href);
@@ -21,14 +20,9 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden hero-gradient">
-      {/* Background grid */}
       <div className="absolute inset-0 bg-grid opacity-40" />
-
-      {/* Glow orbs */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-600/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-brand-800/10 rounded-full blur-3xl pointer-events-none" />
-
-      {/* Background image overlay */}
       <div
         className="absolute inset-0 opacity-10"
         style={{
@@ -39,10 +33,8 @@ export default function Hero() {
       />
       <div className="absolute inset-0 bg-gradient-to-b from-navy-950/50 via-transparent to-navy-950/80" />
 
-      {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
-        <div className="max-w-4xl">
-          {/* Badge */}
+        <div className="max-w-5xl">
           <motion.div
             custom={0}
             variants={fadeUp}
@@ -54,35 +46,29 @@ export default function Hero() {
             Infraestructura · Tecnología · Servicios
           </motion.div>
 
-          {/* Headline */}
           <motion.h1
             custom={1}
             variants={fadeUp}
             initial="hidden"
             animate="visible"
-            className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-[1.1] tracking-tight mb-6"
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight mb-6"
           >
-            Infraestructura.
-            <br />
-            <span className="text-gradient">Tecnología.</span>
-            <br />
-            Operación.
+            Ejecutamos infraestructura tecnológica crítica para{" "}
+            <span className="text-gradient">empresas, gobiernos e integradores.</span>
           </motion.h1>
 
-          {/* Subtitle */}
           <motion.p
             custom={2}
             variants={fadeUp}
             initial="hidden"
             animate="visible"
-            className="text-lg sm:text-xl text-white/60 max-w-2xl leading-relaxed mb-10"
+            className="text-lg sm:text-xl text-white/60 max-w-3xl leading-relaxed mb-10"
           >
-            Diseñamos, construimos, modernizamos, operamos y protegemos la infraestructura
-            crítica de organizaciones públicas y privadas. Soluciones llave en mano,
-            desde la obra civil hasta la operación continua.
+            Diseñamos, implementamos y ponemos en operación proyectos de infraestructura tecnológica.
+            Integramos networking, WiFi empresarial, Data Centers, cableado estructurado, seguridad
+            electrónica e infraestructura física bajo un único equipo de ejecución.
           </motion.p>
 
-          {/* CTAs */}
           <motion.div
             custom={3}
             variants={fadeUp}
@@ -110,10 +96,8 @@ export default function Hero() {
             </motion.button>
           </motion.div>
         </div>
-
       </div>
 
-      {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
