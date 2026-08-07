@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, Linkedin, MessageCircle, Send, CheckCircle } from "lucide-react";
+import { Mail, Phone, Linkedin, MessageCircle, Send, CheckCircle, AlertCircle } from "lucide-react";
 
 interface FormData {
   name: string;
@@ -16,8 +16,8 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "info@forteva.com.ar",
-    href: "mailto:info@forteva.com.ar",
+    value: "ventas@forteva.com.ar",
+    href: "mailto:ventas@forteva.com.ar",
   },
   {
     icon: Phone,
@@ -49,19 +49,38 @@ export default function Contact() {
   });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    if (error) setError(null);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    await new Promise((r) => setTimeout(r, 1200));
-    setLoading(false);
-    setSubmitted(true);
+    setError(null);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || "Error al enviar el mensaje");
+      }
+
+      setSubmitted(true);
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : "Error al enviar. Intentá de nuevo o escribinos por WhatsApp.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -193,6 +212,18 @@ export default function Contact() {
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-brand-400 focus:ring-2 focus:ring-brand-400/20 outline-none transition-all duration-200 text-sm text-gray-900 placeholder:text-gray-400 resize-none"
                     />
                   </div>
+
+                  {error && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="flex items-center gap-2 text-red-600 text-sm bg-red-50 border border-red-100 rounded-xl px-4 py-3"
+                    >
+                      <AlertCircle size={16} className="flex-shrink-0" />
+                      {error}
+                    </motion.div>
+                  )}
+
                   <motion.button
                     type="submit"
                     disabled={loading}

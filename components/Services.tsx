@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Network, ShieldAlert, Lock, HardHat, Headphones, Layers, ArrowRight } from "lucide-react";
+import { Network, ShieldAlert, Lock, HardHat, Headphones, Layers } from "lucide-react";
 
 const services = [
   {
@@ -123,7 +123,7 @@ export default function Services() {
                 </div>
                 <h3 className="text-xl font-bold text-navy-800 mb-3">{svc.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed mb-6">{svc.description}</p>
-                <ul className="space-y-2 mb-6">
+                <ul className="space-y-2">
                   {svc.items.map((item, j) => (
                     <li key={j} className="flex items-center gap-2 text-sm text-gray-600">
                       <span className="w-1.5 h-1.5 rounded-full bg-brand-500 flex-shrink-0" />
@@ -131,9 +131,7 @@ export default function Services() {
                     </li>
                   ))}
                 </ul>
-                <div className="flex items-center gap-1 text-brand-600 text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  Ver más <ArrowRight size={14} />
-                </div>
+
               </div>
             </motion.div>
           ))}
