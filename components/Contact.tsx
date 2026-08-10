@@ -23,7 +23,7 @@ const contactInfo = [
     icon: MessageCircle,
     label: "WhatsApp",
     value: "Escribinos por WhatsApp",
-    href: "https://wa.me/541112345678?text=Hola%20FORTEVA%2C%20quiero%20consultar%20sobre%20sus%20servicios",
+    href: "https://wa.me/5492214772538?text=Hola%20FORTEVA%2C%20quiero%20consultar%20sobre%20sus%20servicios",
   },
 ];
 
