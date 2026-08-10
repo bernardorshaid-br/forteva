@@ -52,10 +52,10 @@ export default function Navbar() {
             <Image
               src="/logo-forteva.png"
               alt="FORTEVA"
-              width={180}
+              width={240}
               height={50}
               priority
-              className="object-contain h-10 w-auto"
+              className="object-contain h-14 w-auto"
             />
           </motion.a>
 
