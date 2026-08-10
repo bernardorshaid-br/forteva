@@ -1,33 +1,31 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Linkedin, Mail, ArrowUpRight } from "lucide-react";
-import { LogoIcon } from "./Logo";
+import { Mail, ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 
 const footerLinks = {
   servicios: [
     "Infraestructura Tecnológica",
     "Seguridad Electrónica",
     "Ciberseguridad",
-    "Infraestructura y Construcción",
+    "Infraestructura Física",
     "Servicios Administrados",
     "Proyectos Llave en Mano",
   ],
   empresa: [
-    "Nosotros",
-    "Casos de éxito",
-    "Trabajá con nosotros",
-    "Contacto",
-  ],
-  contacto: [
-    "info@forteva.com.ar",
-    "+54 11 1234-5678",
-    "Buenos Aires, Argentina",
+    { label: "Nosotros", href: "#nosotros" },
+    { label: "Trabajá con nosotros", href: "mailto:ventas@forteva.com.ar?subject=Quiero%20trabajar%20en%20FORTEVA" },
+    { label: "Contacto", href: "#contacto" },
   ],
 };
 
 export default function Footer() {
   const handleScroll = (href: string) => {
+    if (href.startsWith("mailto:")) {
+      window.location.href = href;
+      return;
+    }
     const el = document.querySelector(href);
     if (el) el.scrollIntoView({ behavior: "smooth" });
   };
@@ -38,33 +36,27 @@ export default function Footer() {
         {/* Main footer */}
         <div className="py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 border-b border-white/10">
           {/* Brand */}
-          <div className="lg:col-span-1">
-            <div className="flex items-center gap-2 mb-5">
-              <LogoIcon size={30} />
-              <span className="font-bold text-xl tracking-wide">FORTEVA</span>
+          <div className="lg:col-span-2">
+            <div className="mb-5">
+              <Image
+                src="/logo-forteva.png"
+                alt="FORTEVA"
+                width={180}
+                height={60}
+                className="object-contain h-12 w-auto"
+              />
             </div>
-            <p className="text-white/50 text-sm leading-relaxed mb-6">
-              Diseñamos, construimos, operamos y protegemos infraestructura crítica
-              para organizaciones públicas y privadas.
+            <p className="text-white/50 text-sm leading-relaxed mb-6 max-w-xs">
+              Diseñamos, implementamos y operamos infraestructura tecnológica crítica
+              para empresas, gobiernos e integradores.
             </p>
-            <div className="flex items-center gap-3">
-              <motion.a
-                href="https://linkedin.com/company/forteva"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.1, y: -2 }}
-                className="w-9 h-9 rounded-lg bg-white/10 hover:bg-brand-600 flex items-center justify-center transition-colors duration-200"
-              >
-                <Linkedin size={16} />
-              </motion.a>
-              <motion.a
-                href="mailto:info@forteva.com.ar"
-                whileHover={{ scale: 1.1, y: -2 }}
-                className="w-9 h-9 rounded-lg bg-white/10 hover:bg-brand-600 flex items-center justify-center transition-colors duration-200"
-              >
-                <Mail size={16} />
-              </motion.a>
-            </div>
+            <motion.a
+              href="mailto:ventas@forteva.com.ar"
+              whileHover={{ scale: 1.1, y: -2 }}
+              className="w-9 h-9 rounded-lg bg-white/10 hover:bg-brand-600 flex items-center justify-center transition-colors duration-200 inline-flex"
+            >
+              <Mail size={16} />
+            </motion.a>
           </div>
 
           {/* Services */}
@@ -92,48 +84,26 @@ export default function Footer() {
               Empresa
             </h4>
             <ul className="space-y-3">
-              {footerLinks.empresa.map((item, i) => (
-                <li key={item}>
+              {footerLinks.empresa.map((item) => (
+                <li key={item.label}>
                   <button
-                    onClick={() =>
-                      handleScroll(i === 3 ? "#contacto" : "#nosotros")
-                    }
-                    className="text-sm text-white/60 hover:text-white transition-colors duration-200 text-left"
+                    onClick={() => handleScroll(item.href)}
+                    className="text-sm text-white/60 hover:text-white transition-colors duration-200 text-left flex items-center gap-1 group"
                   >
-                    {item}
+                    {item.label}
+                    {item.href.startsWith("mailto:") && (
+                      <ArrowUpRight size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                    )}
                   </button>
                 </li>
               ))}
             </ul>
           </div>
-
-          {/* Contact */}
-          <div>
-            <h4 className="font-semibold text-sm uppercase tracking-widest text-white/40 mb-5">
-              Contacto
-            </h4>
-            <ul className="space-y-3">
-              {footerLinks.contacto.map((item) => (
-                <li key={item} className="text-sm text-white/60">
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <motion.button
-              onClick={() => handleScroll("#contacto")}
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              className="mt-6 flex items-center gap-2 text-sm text-brand-400 hover:text-brand-300 font-medium transition-colors duration-200"
-            >
-              Enviar mensaje
-              <ArrowUpRight size={14} />
-            </motion.button>
-          </div>
         </div>
 
         {/* Bottom bar */}
         <div className="py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/30">
-          <span>© {new Date().getFullYear()} FORTEVA S.A.S. Todos los derechos reservados.</span>
+          <span>© {new Date().getFullYear()} FORTEVA. Todos los derechos reservados.</span>
           <div className="flex items-center gap-6">
             <button className="hover:text-white/60 transition-colors duration-200">
               Política de privacidad
