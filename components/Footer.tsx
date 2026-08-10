@@ -34,9 +34,9 @@ export default function Footer() {
     <footer className="bg-navy-950 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main footer */}
-        <div className="py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 border-b border-white/10">
+        <div className="py-16 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-12 border-b border-white/10">
           {/* Brand */}
-          <div className="lg:col-span-2">
+          <div className="">
             <div className="mb-5">
               <Image
                 src="/logo-forteva.png"
@@ -46,7 +46,7 @@ export default function Footer() {
                 className="object-contain h-12 w-auto"
               />
             </div>
-            <p className="text-white/50 text-sm leading-relaxed mb-6 max-w-xs">
+            <p className="text-white/50 text-sm leading-relaxed mb-6">
               Diseñamos, implementamos y operamos infraestructura tecnológica crítica
               para empresas, gobiernos e integradores.
             </p>
