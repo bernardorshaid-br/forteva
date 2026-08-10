@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, Linkedin, MessageCircle, Send, CheckCircle, AlertCircle } from "lucide-react";
+import { Mail, MessageCircle, Send, CheckCircle, AlertCircle } from "lucide-react";
 
 interface FormData {
   name: string;
@@ -18,18 +18,6 @@ const contactInfo = [
     label: "Email",
     value: "ventas@forteva.com.ar",
     href: "mailto:ventas@forteva.com.ar",
-  },
-  {
-    icon: Phone,
-    label: "Teléfono",
-    value: "+54 11 1234-5678",
-    href: "tel:+541112345678",
-  },
-  {
-    icon: Linkedin,
-    label: "LinkedIn",
-    value: "FORTEVA en LinkedIn",
-    href: "https://linkedin.com/company/forteva",
   },
   {
     icon: MessageCircle,
@@ -257,12 +245,6 @@ export default function Contact() {
             className="lg:col-span-2 flex flex-col gap-6"
           >
             <div className="bg-navy-800 rounded-2xl p-8 text-white">
-              <h3 className="text-xl font-bold mb-2">Buenos Aires, Argentina</h3>
-              <p className="text-white/60 text-sm mb-8">
-                Atendemos proyectos en todo el país y brindamos soporte remoto
-                a nivel nacional.
-              </p>
-
               <div className="space-y-5">
                 {contactInfo.map((item, index) => (
                   <motion.a
@@ -285,15 +267,6 @@ export default function Contact() {
                   </motion.a>
                 ))}
               </div>
-            </div>
-
-            <div className="bg-brand-600 rounded-2xl p-8 text-white">
-              <h3 className="text-lg font-bold mb-2">Respuesta garantizada</h3>
-              <p className="text-white/80 text-sm leading-relaxed">
-                Nuestro equipo comercial responde todas las consultas en menos de{" "}
-                <strong className="text-white">24 horas hábiles</strong>. Para urgencias,
-                contáctenos directamente por WhatsApp.
-              </p>
             </div>
           </motion.div>
         </div>
