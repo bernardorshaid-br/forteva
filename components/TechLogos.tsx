@@ -2,17 +2,16 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import Image from "next/image";
 
 const logos = [
-  { name: "Cisco", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/320px-Cisco_logo_blue_2016.svg.png" },
-  { name: "Cisco Meraki", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Meraki_Logo.svg/320px-Meraki_Logo.svg.png" },
-  { name: "Fortinet", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Fortinet_logo.svg/320px-Fortinet_logo.svg.png" },
-  { name: "Aruba Networks", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Aruba_Networks_logo.svg/320px-Aruba_Networks_logo.svg.png" },
-  { name: "HPE", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Hewlett_Packard_Enterprise_logo.svg/320px-Hewlett_Packard_Enterprise_logo.svg.png" },
-  { name: "Dell Technologies", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Dell_Logo.png/320px-Dell_Logo.png" },
-  { name: "Hikvision", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Hikvision_logo.svg/320px-Hikvision_logo.svg.png" },
-  { name: "Palo Alto Networks", src: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Palo_Alto_Networks_2020_Logo.svg/320px-Palo_Alto_Networks_2020_Logo.svg.png" },
+  { name: "Cisco",          src: "/logos/cisco.svg" },
+  { name: "Cisco Meraki",   src: "/logos/meraki.svg" },
+  { name: "Fortinet",       src: "/logos/fortinet.svg" },
+  { name: "Aruba",          src: "/logos/aruba.svg" },
+  { name: "HPE",            src: "/logos/hpe.svg" },
+  { name: "Dell",           src: "/logos/dell.svg" },
+  { name: "Hikvision",      src: "/logos/hikvision.svg" },
+  { name: "Palo Alto",      src: "/logos/paloalto.svg" },
 ];
 
 export default function TechLogos() {
@@ -49,7 +48,7 @@ export default function TechLogos() {
               <img
                 src={logo.src}
                 alt={logo.name}
-                className="h-8 w-auto object-contain max-w-[110px]"
+                className="h-8 w-auto object-contain max-w-[120px]"
                 loading="lazy"
               />
             </motion.div>
