@@ -19,7 +19,7 @@ export async function POST(req: NextRequest) {
 
     const { data, error } = await resend.emails.send({
       from: "FORTEVA Contacto <noreply@forteva.com.ar>",
-      to: ["bernardorshaid@gmail.com"],
+      to: ["bernardorshaid@gmail.com", "forichertomas@gmail.com"],
       reply_to: email,
       subject: `Nueva consulta de ${name} — ${company || "Sin empresa"}`,
       html: `
